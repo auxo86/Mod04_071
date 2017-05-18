@@ -13,6 +13,7 @@ namespace Mod02_01.DAL
     {  
         protected override void Seed(OperaContext context)
         {
+            //用來初始資料庫的種子
             base.Seed(context);
             context.Operas.Add(new Opera()
             {

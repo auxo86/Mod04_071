@@ -38,6 +38,7 @@ namespace Mod02_01.Controllers
             //Opera.Index
             Debug.WriteLine("Opera.Index");
             OperaContext context = new OperaContext();
+            //是多筆資料喔，所以用Operas
             return View(context.Operas.ToList());
         }
         public ActionResult Details(int? id)
@@ -103,6 +104,7 @@ namespace Mod02_01.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            //Edit.cshtml
             return View(opera);
         }
 
@@ -149,6 +151,7 @@ namespace Mod02_01.Controllers
                 return HttpNotFound();
             context.Operas.Remove(o);
             context.SaveChanges();
+            //是Opera的Controller，自然回到OperaController的Index
             return RedirectToAction("Index");
         }
     }
